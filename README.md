@@ -7,6 +7,6 @@ Group Members:
 Stephen Lomangino
 Tyler Hall
 Marcus Messina
-Zifko Andonovski
+Zivko Andonovski
 Yamnel Serra
 
