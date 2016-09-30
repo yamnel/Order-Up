@@ -1,6 +1,5 @@
 # OrderUp: Campus Edition
 
-Read-Me:
 
 OrderUp is an application that allows it users to build custom meal
 schedules. The meals are ordered from pre-selected restaurant menus
