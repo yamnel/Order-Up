@@ -14,7 +14,7 @@ public class LogInScreen extends JFrame {
     JTextField txtFieldUser;
     JTextField txtFieldPassword;
     JButton btnCancel;
-    JLabel logoHolderLabel;
+    JLabel logoHolderLabel; //tried to put pic this then add it for panel
     JLabel schoolChoiceLabel;
     JLabel usernameLabel;
     JLabel passwordLabel;
