@@ -11,13 +11,13 @@ import java.util.*;
 public class LogInScreen extends JFrame {
     JButton btnLogIn;
     JPanel logInPanel;
-    JTextField txtUser;
-    JTextField txtPassword;
+    JTextField txtFieldUser;
+    JTextField txtFieldPassword;
     JButton btnCancel;
     JLabel logoHolderLabel;
     JLabel schoolChoiceLabel;
-    JLabel username;
-    JLabel password;
+    JLabel usernameLabel;
+    JLabel passwordLabel;
     ImageIcon orderUpLogo;
     JComboBox schoolChoiceBox;
 
@@ -28,18 +28,18 @@ public class LogInScreen extends JFrame {
     public LogInScreen(){
         super("Login Screen");
 
-        schoolChoiceBox = new JComboBox(schoolNames); //puts schools into
+        schoolChoiceBox = new JComboBox(schoolNames); //puts schools names into
         // comboBox rows
         orderUpLogo = new ImageIcon("OrderUpLogo 50x50.png");// holds the logo
-        btnLogIn = new JButton("Login"); // login btn
+        btnLogIn = new JButton("Login");
         btnCancel = new JButton("Cancel");
         logInPanel = new JPanel();
-        txtUser = new JTextField(15);
-        txtPassword = new JPasswordField(15);
+        txtFieldUser = new JTextField(15);
+        txtFieldPassword = new JPasswordField(15);
 
         schoolChoiceLabel = new JLabel("University ");
-        username = new JLabel("Email ");
-        password = new JLabel("Password ");
+        usernameLabel = new JLabel("Email ");
+        passwordLabel = new JLabel("Password ");
 
         //Our setLocation be different on other screen resolutions
 
@@ -53,26 +53,26 @@ public class LogInScreen extends JFrame {
         //sets all of the specified location of each of the JObjects
         //if setSize is changed, these will be affected
 
-        txtUser.setBounds(175,230,150,20); //TextFields
-        txtPassword.setBounds(175,265,150,20); //TextFields
-        btnLogIn.setBounds(210,300,80,20); //Buttons
-        btnCancel.setBounds(210,335,80,20); //Buttons
+        txtFieldUser.setBounds(175,230,150,20);
+        txtFieldPassword.setBounds(175,265,150,20);
+        btnLogIn.setBounds(210,300,80,20);
+        btnCancel.setBounds(210,335,80,20);
         schoolChoiceBox.setBounds(175,150,150,20);
         schoolChoiceLabel.setBounds(112,150,80,20);
-        username.setBounds(135,228,80,20); //JLabel
-        password.setBounds(110,263,80,20); //JLabel
+        usernameLabel.setBounds(135,228,80,20);
+        passwordLabel.setBounds(110,263,80,20);
 
 
         //logInPanel.add(logoHolderLabel, BorderLayout.NORTH); wasn't working
         logInPanel.add(btnLogIn);
-        logInPanel.add(txtUser);
-        logInPanel.add(txtPassword);
+        logInPanel.add(txtFieldUser);
+        logInPanel.add(txtFieldPassword);
         logInPanel.add(btnCancel);
         logInPanel.add(schoolChoiceBox);
         logInPanel.add(schoolChoiceLabel);
-//        logInPanel.add(logoHolderLabel);
-        logInPanel.add(username);
-        logInPanel.add(password);
+        //logInPanel.add(logoHolderLabel);
+        logInPanel.add(usernameLabel);
+        logInPanel.add(passwordLabel);
 
         getContentPane().add(logInPanel);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -106,8 +106,8 @@ public class LogInScreen extends JFrame {
 
                     String usertxt = " ";
                     String passtxt = " ";
-                    String puname = txtUser.getText();
-                    String ppaswd = txtPassword.getText();
+                    String puname = txtFieldUser.getText();
+                    String ppaswd = txtFieldPassword.getText();
 
 
                     while (scan.hasNext()) {
@@ -129,9 +129,9 @@ public class LogInScreen extends JFrame {
                     else {
 
                         JOptionPane.showMessageDialog(null,"Wrong Username / Password");
-                        txtUser.setText("");
-                        txtPassword.setText("");
-                        txtUser.requestFocus();
+                        txtFieldUser.setText("");
+                        txtFieldPassword.setText("");
+                        txtFieldUser.requestFocus();
                     }
                 } catch (IOException d) {
                     d.printStackTrace();
