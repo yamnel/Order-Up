@@ -14,40 +14,63 @@ public class LogInScreen extends JFrame {
     JTextField txtUser;
     JTextField txtPassword;
     JButton btnCancel;
+    JLabel logoHolderLabel;
+    JLabel schoolChoiceLabel;
     JLabel username;
     JLabel password;
+    ImageIcon orderUpLogo;
+    JComboBox schoolChoiceBox;
 
+    //for schoolChoiceBox
+    private static final String[] schoolNames = {" ","Florida Gulf Coast " +
+            "University"};
 
     public LogInScreen(){
         super("Login Screen");
 
-        btnLogIn = new JButton("Login");
-        btnCancel = new JButton("Cancel");  // we probably don't need a new usr
+        schoolChoiceBox = new JComboBox(schoolNames); //puts schools into
+        // comboBox rows
+        orderUpLogo = new ImageIcon("OrderUpLogo 50x50.png");// holds the logo
+        btnLogIn = new JButton("Login"); // login btn
+        btnCancel = new JButton("Cancel");
         logInPanel = new JPanel();
         txtUser = new JTextField(15);
         txtPassword = new JPasswordField(15);
 
-
-
+        schoolChoiceLabel = new JLabel("University ");
         username = new JLabel("Email ");
         password = new JLabel("Password ");
 
-        setSize(300,200);
-        setLocation(500,280);
+        //Our setLocation be different on other screen resolutions
+
+        setSize(500,400); //sets the size of the frame
+        setLocation(500,280); //sets the location of the frame on the screen
         logInPanel.setLayout (null);
+        schoolChoiceBox.setMaximumRowCount(schoolNames.length); //sets max
+        // rows to number of schools in schoolNames array
+
+        //ctrl and hover over a function for info (intellij)
+        //sets all of the specified location of each of the JObjects
+        //if setSize is changed, these will be affected
+
+        txtUser.setBounds(175,230,150,20); //TextFields
+        txtPassword.setBounds(175,265,150,20); //TextFields
+        btnLogIn.setBounds(210,300,80,20); //Buttons
+        btnCancel.setBounds(210,335,80,20); //Buttons
+        schoolChoiceBox.setBounds(175,150,150,20);
+        schoolChoiceLabel.setBounds(112,150,80,20);
+        username.setBounds(135,228,80,20); //JLabel
+        password.setBounds(110,263,80,20); //JLabel
 
 
-        txtUser.setBounds(90,30,150,20);
-        txtPassword.setBounds(90,65,150,20);
-        btnLogIn.setBounds(110,100,80,20);
-        btnCancel.setBounds(110,135,80,20);
-        username.setBounds(20,28,80,20);
-        password.setBounds(20,63,80,20);
-
+        //logInPanel.add(logoHolderLabel, BorderLayout.NORTH); wasn't working
         logInPanel.add(btnLogIn);
         logInPanel.add(txtUser);
         logInPanel.add(txtPassword);
         logInPanel.add(btnCancel);
+        logInPanel.add(schoolChoiceBox);
+        logInPanel.add(schoolChoiceLabel);
+//        logInPanel.add(logoHolderLabel);
         logInPanel.add(username);
         logInPanel.add(password);
 
