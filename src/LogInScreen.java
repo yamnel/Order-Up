@@ -9,11 +9,11 @@ import java.io.*;
 import java.util.*;
 
 public class LogInScreen extends JFrame {
-    JButton blogin;
-    JPanel loginpanel;
-    JTextField txuser;
-    JTextField pass;
-    JButton newUSer;
+    JButton btnLogIn;
+    JPanel logInPanel;
+    JTextField txtUser;
+    JTextField txtPassword;
+    JButton newUser;
     JLabel username;
     JLabel password;
 
@@ -21,34 +21,34 @@ public class LogInScreen extends JFrame {
     public LogInScreen(){
         super("Login Screen");
 
-        blogin = new JButton("Login");
-        loginpanel = new JPanel();
-        txuser = new JTextField(15);
-        pass = new JPasswordField(15);
-        newUSer = new JButton("New User?");
+        btnLogIn = new JButton("Login");
+        logInPanel = new JPanel();
+        txtUser = new JTextField(15);
+        txtPassword = new JPasswordField(15);
+//        newUser = new JButton("New User?");
         username = new JLabel("User - ");
-        password = new JLabel("Pass - ");
+        password = new JLabel("txtPassword - ");
 
         setSize(300,200);
         setLocation(500,280);
-        loginpanel.setLayout (null);
+        logInPanel.setLayout (null);
 
 
-        txuser.setBounds(70,30,150,20);
-        pass.setBounds(70,65,150,20);
-        blogin.setBounds(110,100,80,20);
-        newUSer.setBounds(110,135,80,20);
+        txtUser.setBounds(70,30,150,20);
+        txtPassword.setBounds(70,65,150,20);
+        btnLogIn.setBounds(110,100,80,20);
+        newUser.setBounds(110,135,80,20);
         username.setBounds(20,28,80,20);
         password.setBounds(20,63,80,20);
 
-        loginpanel.add(blogin);
-        loginpanel.add(txuser);
-        loginpanel.add(pass);
-        loginpanel.add(newUSer);
-        loginpanel.add(username);
-        loginpanel.add(password);
+        logInPanel.add(btnLogIn);
+        logInPanel.add(txtUser);
+        logInPanel.add(txtPassword);
+        logInPanel.add(newUser);
+        logInPanel.add(username);
+        logInPanel.add(password);
 
-        getContentPane().add(loginpanel);
+        getContentPane().add(logInPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
@@ -70,7 +70,7 @@ public class LogInScreen extends JFrame {
 
 
 
-        blogin.addActionListener(new ActionListener() {
+        btnLogIn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
                     File file = new File("userPass.txt");
@@ -80,8 +80,8 @@ public class LogInScreen extends JFrame {
 
                     String usertxt = " ";
                     String passtxt = " ";
-                    String puname = txuser.getText();
-                    String ppaswd = pass.getText();
+                    String puname = txtUser.getText();
+                    String ppaswd = txtPassword.getText();
 
 
                     while (scan.hasNext()) {
@@ -103,9 +103,9 @@ public class LogInScreen extends JFrame {
                     else {
 
                         JOptionPane.showMessageDialog(null,"Wrong Username / Password");
-                        txuser.setText("");
-                        pass.setText("");
-                        txuser.requestFocus();
+                        txtUser.setText("");
+                        txtPassword.setText("");
+                        txtUser.requestFocus();
                     }
                 } catch (IOException d) {
                     d.printStackTrace();
@@ -114,9 +114,9 @@ public class LogInScreen extends JFrame {
             }
         });
 
-        newUSer.addActionListener(new ActionListener(){
+        newUser.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
-                //NewUser user = new NewUser();
+                //newUser user = new newUser();
                 dispose();
 
             }
