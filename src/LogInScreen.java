@@ -1,5 +1,6 @@
 /**********************************\
- * Created by Yamnel on 10/13/16. *   
+ * Created by Yamnel on 10/13/16.
+ * Edited with Zivko
  \**********************************/
 import javax.swing.*;
 import java.awt.*;
