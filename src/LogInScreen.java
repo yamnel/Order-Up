@@ -13,7 +13,7 @@ public class LogInScreen extends JFrame {
     JPanel logInPanel;
     JTextField txtUser;
     JTextField txtPassword;
-    JButton newUser;
+    JButton btnCancel;
     JLabel username;
     JLabel password;
 
@@ -22,34 +22,37 @@ public class LogInScreen extends JFrame {
         super("Login Screen");
 
         btnLogIn = new JButton("Login");
+        btnCancel = new JButton("Cancel");  // we probably don't need a new usr
         logInPanel = new JPanel();
         txtUser = new JTextField(15);
         txtPassword = new JPasswordField(15);
-//        newUser = new JButton("New User?");
-        username = new JLabel("User - ");
-        password = new JLabel("txtPassword - ");
+
+
+
+        username = new JLabel("Email ");
+        password = new JLabel("Password ");
 
         setSize(300,200);
         setLocation(500,280);
         logInPanel.setLayout (null);
 
 
-        txtUser.setBounds(70,30,150,20);
-        txtPassword.setBounds(70,65,150,20);
+        txtUser.setBounds(90,30,150,20);
+        txtPassword.setBounds(90,65,150,20);
         btnLogIn.setBounds(110,100,80,20);
-        newUser.setBounds(110,135,80,20);
+        btnCancel.setBounds(110,135,80,20);
         username.setBounds(20,28,80,20);
         password.setBounds(20,63,80,20);
 
         logInPanel.add(btnLogIn);
         logInPanel.add(txtUser);
         logInPanel.add(txtPassword);
-        logInPanel.add(newUser);
+        logInPanel.add(btnCancel);
         logInPanel.add(username);
         logInPanel.add(password);
 
         getContentPane().add(logInPanel);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
 
         Writer writer = null;
@@ -114,11 +117,11 @@ public class LogInScreen extends JFrame {
             }
         });
 
-        newUser.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                //newUser user = new newUser();
-                dispose();
 
+
+        btnCancel.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
             }
         });
     }
